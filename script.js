@@ -68,14 +68,14 @@ function other_fn(){
     grid.cells.forEach(cell => (score += cell.mergeTiles()))
     const newTile = new Tile(gameBoard)
     grid.randomEmptyCell().tile = newTile
+    change_score()
     if(!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()){
         newTile.waitForTransition(true).then(() => {
             alert("Your Score => " + score)
             location.reload();
         }) 
         return
-    }
-    change_score()
+    } 
     setupInput()
 }
 
