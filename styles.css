@@ -1,0 +1,188 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Protest Riot', sans-serif;
+}
+
+body{
+    background-color: #3C3633;
+    height: 100vh;
+    margin: 2vmin;
+    font-size: 7.5vmin; 
+    overflow: hidden;
+}
+ 
+
+#nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vmin;
+    color: #FFFBF5; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px; 
+    padding-bottom: 5vmin;
+}
+
+#base{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5vmin;
+  font-size: 5vmin;
+  color: #FFFBF5;
+}
+
+#main-div{ 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin; 
+}
+
+#score-and-move-board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10vmin;
+    width: 44vmin; 
+}
+
+#score-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vmin;
+    height: 30vmin; 
+    border-radius: 2vmin; 
+    color: #FFFBF5;
+    font-size: 10vmin;
+}
+
+#move-board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vmin;
+    height: 30vmin; 
+    border-radius: 3vmin;  
+}
+
+#game-board{
+    --grid-size: 4;
+    --cell-size: 10vmin;
+    --cell-gap: 2vmin;
+
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: #FDDEB3;
+    gap: var(--cell-gap);
+    border-radius: 2vmin;
+    padding: var(--cell-gap);
+    position: relative;
+}
+
+.cell{
+    background-color: #FFF6F6;
+    border-radius: 3vmin;
+}
+
+.tile{
+    --x: 3;
+    --y: 1;
+    --background-lightness: 80%;
+    --text-lightness: 20%;
+    
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size); 
+    border-radius: 1vmin;
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    font-weight: bold;
+    background-color: hsl(10, 50%, var(--background-lightness));
+    color: hsl(10, 25%, var(--text-lightness));
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0.5;
+        transform: scale(0);
+    }
+}
+
+.my-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 15vmin;
+    height: 10vmin;
+    float: left;
+    cursor: pointer;
+  }
+  .my-arrow:hover:after {
+    border-color: #026073;
+  }
+  .my-arrow:after {
+    content: "";
+    background: none;
+    width: 6vmin;
+    height: 6vmin;
+    position: absolute;
+    z-index: 1;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+  }
+  .my-arrow-top:after {
+    border-top: 3vmin solid #FFFBF5;
+    border-right: 3vmin solid #FFFBF5; 
+  }
+  .my-arrow-top:after {
+    -webkit-top-right-border-radius: 3vmin;
+    -moz-top-right-border-radius: 3vmin;
+    border-top-right-radius: 1vmin;
+  }
+  .my-arrow-right:after {
+    border-right: 3vmin solid #FFFBF5;
+    border-bottom: 3vmin solid #FFFBF5; 
+  }
+  .my-arrow-right:after {
+    -webkit-bottom-right-border-radius: 3vmin;
+    -moz-bottom-right-border-radius: 3vmin;
+    border-bottom-right-radius: 1vmin;
+  }
+  .my-arrow-bottom:after {
+    border-bottom: 3vmin solid #FFFBF5;
+    border-left: 3vmin solid #FFFBF5; 
+  }
+  .my-arrow-bottom:after {
+    -webkit-bottom-left-border-radius: 3vmin;
+    -moz-bottom-left-border-radius: 3vmin;
+    border-bottom-left-radius: 1vmin;
+  }
+  .my-arrow-left:after {
+    border-left: 3vmin solid #FFFBF5;
+    border-top: 3vmin solid #FFFBF5; 
+  }
+  .my-arrow-left:after {
+    -webkit-top-left-border-radius: 3vmin;
+    -moz-top-left-border-radius: 3vmin;
+    border-top-left-radius: 1vmin;
+  } 
+  
+  .demo {
+    margin: 100px auto;
+    width: 400px;
+  }
+  
+
+

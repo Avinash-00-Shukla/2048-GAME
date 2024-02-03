@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 GAME</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div id="nav">2048 Challenge - Use Arrows / Keys</div>
+    <div id="main-div">
+        <div id="game-board"></div>
+        <div id="score-and-move-board">
+            <div id="score-board">SCORE</div>
+            <div id="move-board">
+                <a class="my-arrow my-arrow-left" id="left"></a>
+                <div style="display: flex; flex-direction: column; gap: 10vmin; justify-content: center; align-items: center;">
+                    <a class="my-arrow my-arrow-top" id="up"></a>
+                    <a class="my-arrow my-arrow-bottom" id="down"></a>
+                </div>
+                <a class="my-arrow my-arrow-right" id="right"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="base">
+        <div>©Avinash Shukla</div>
+        <div>
+            <a class="social-icon__link" href="https://www.linkedin.com/in/avinash-00-shukla/" target="_blank">
+                <div style=" width : 5vmin; height: 5vmin;">
+                    <img src="linkedin.svg" width="100%" height="100%">
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
+
